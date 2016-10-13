@@ -226,11 +226,11 @@ function simlgca
     av_vel_y_comps = zeros(1, grain_x * grain_y);
     
     currval = 1;
-    for (i = 1:1:grain_x)
+    for (i = 1:grain_x)
             % Calculate the lower and upper x-boundaries.
             x_bd_l = (i - 1)*grain_size + 1;
             x_bd_u = i*grain_size;
-        for (j = 1:1:grain_y)
+        for (j = 1:grain_y)
             % Calculate the lower and upper y-boundaries.
             y_bd_l = (j - 1)*grain_size + 1;
             y_bd_u = j*grain_size;      
@@ -271,11 +271,11 @@ function simlgca
     obstacle_y = zeros(1, nnz(obstacle));
     k = 1;
     
-     for (i = 1:1:numnodes_x)
-        for (j = 1:1:numnodes_y)
+     for (i = 1:nodes_x)
+        for (j = 1:nodes_y)
             if (obstacle(i, j) == 1)
-                obstacle_x(k) = 0.5 + (numnodes_x ./ (grain_size .* (numnodes_x - 1))) .* (i - 1);
-                obstacle_y(k) = 0.5 + (numnodes_y ./ (grain_size .* (numnodes_y - 1))) .* (j - 1);
+                obstacle_x(k) = 0.5 + (nodes_x ./ (grain_size .* (nodes_x - 1))) .* (i - 1);
+                obstacle_y(k) = 0.5 + (nodes_y ./ (grain_size .* (nodes_y - 1))) .* (j - 1);
                 k = k + 1;
             end
         end
