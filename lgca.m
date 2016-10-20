@@ -39,7 +39,7 @@ function simlgca
                     
                     num_particles=sum(cell);
                     
-                    if (num_particles~=2) && num_particles~=3)
+                    if (num_particles~=2 && num_particles~=3)
                         nodes(i,j,:)=cell
                         
                     elseif num_particles==3
